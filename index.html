@@ -755,7 +755,8 @@ si<!DOCTYPE html>
         /* Character Grid */
         .char-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(clamp(120px, 25vw, 160px), 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(clamp(120px, 26vw, 160px), 1fr));
+            justify-items: center;
             gap: clamp(15px, 5vw, 30px);
             margin-bottom: clamp(20px, 5vw, 40px);
             width: 100%;
@@ -763,9 +764,11 @@ si<!DOCTYPE html>
         }
 
         .char-card {
+            width: 100%;
+            max-width: 170px;
             background: linear-gradient(135deg, rgba(126, 200, 227, 0.2) 0%, rgba(255, 182, 217, 0.2) 100%);
             border: clamp(1.5px, 0.5vw, 2px) solid #7EC8E3;
-            padding: clamp(14px, 4vw, 22px);
+            padding: clamp(12px, 3vw, 18px);
             border-radius: 15px;
             text-align: center;
             cursor: pointer;
@@ -774,10 +777,10 @@ si<!DOCTYPE html>
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            gap: clamp(12px, 2.5vw, 16px);
+            justify-content: center;
+            gap: clamp(10px, 2vw, 14px);
             overflow: hidden;
-            min-height: clamp(200px, 30vw, 280px);
+            min-height: clamp(180px, 26vw, 230px);
         }
 
         .char-card:hover {
@@ -804,14 +807,14 @@ si<!DOCTYPE html>
             font-weight: 900;
             color: #fcd34d;
             text-transform: uppercase;
-            font-size: clamp(11px, 2.8vw, 14px);
-            line-height: 1.25;
-            margin: clamp(8px, 2vw, 12px) 0 0;
+            font-size: clamp(10px, 2.4vw, 13px);
+            line-height: 1.2;
+            margin: clamp(6px, 1.5vw, 10px) 0 0;
             width: 100%;
             max-width: 100%;
             padding: 0 clamp(6px, 1.5vw, 8px);
-            overflow-wrap: break-word;
-            word-break: break-word;
+            overflow-wrap: normal;
+            word-break: keep-all;
             white-space: normal;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -939,20 +942,23 @@ si<!DOCTYPE html>
 
             .char-grid {
                 grid-template-columns: repeat(2, minmax(120px, 1fr));
+                justify-items: center;
                 gap: clamp(12px, 5vw, 20px);
                 margin-bottom: clamp(15px, 4vw, 24px);
                 width: 100%;
             }
 
             .char-card {
+                width: 100%;
+                max-width: 160px;
                 padding: clamp(12px, 3vw, 16px);
-                min-height: clamp(180px, 28vw, 220px);
+                min-height: clamp(170px, 26vw, 210px);
                 border: clamp(1px, 0.4vw, 2px) solid #a78bfa;
                 overflow: hidden;
             }
 
             .char-name {
-                font-size: clamp(10px, 2.5vw, 12px);
+                font-size: clamp(10px, 2.3vw, 12px);
                 line-height: 1.2;
                 margin-top: clamp(8px, 2vw, 10px);
             }
@@ -1072,23 +1078,28 @@ si<!DOCTYPE html>
             }
 
             .char-grid {
-                grid-template-columns: repeat(auto-fit, minmax(clamp(80px, 18vw, 110px), 1fr));
+                grid-template-columns: repeat(1, minmax(140px, 1fr));
+                justify-items: center;
                 gap: clamp(10px, 3vw, 15px);
                 margin-bottom: clamp(10px, 3vw, 20px);
             }
 
             .char-card {
+                width: min(90vw, 180px);
                 padding: clamp(10px, 2.5vw, 14px);
                 border: clamp(1px, 0.3vw, 1.5px) solid #a78bfa;
                 min-height: clamp(160px, 26vw, 200px);
-                justify-content: flex-start;
+                justify-content: center;
                 overflow: hidden;
             }
 
             .char-name {
-                font-size: clamp(10px, 2.3vw, 11px);
+                font-size: clamp(10px, 2.1vw, 11px);
                 line-height: 1.2;
                 margin-top: clamp(6px, 1.5vw, 8px);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .char-svg {
