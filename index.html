@@ -755,12 +755,13 @@ si<!DOCTYPE html>
         /* Character Grid */
         .char-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(clamp(120px, 26vw, 160px), 1fr));
+            grid-template-columns: repeat(3, minmax(clamp(120px, 18vw, 160px), 1fr));
+            justify-content: center;
             justify-items: center;
             gap: clamp(15px, 5vw, 30px);
             margin-bottom: clamp(20px, 5vw, 40px);
             width: 100%;
-            max-width: 900px;
+            max-width: 560px;
         }
 
         .char-card {
