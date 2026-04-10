@@ -667,6 +667,13 @@ si<!DOCTYPE html>
             border: 2px solid rgba(255,255,255,0.7);
         }
 
+        .adventure-obstacle img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: inherit;
+        }
+
         .adventure-obstacle.hit {
             background: #ef4444;
             color: #ffffff;
@@ -823,7 +830,9 @@ si<!DOCTYPE html>
             white-space: normal;
             display: -webkit-box;
             -webkit-line-clamp: 2;
+            line-clamp: 2;
             -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         /* End Screen */
@@ -1418,7 +1427,7 @@ si<!DOCTYPE html>
         const adventureTiles = new Set(Array.from({ length: cityData.length - 1 }, (_, i) => i + 1));
         let nextAreaAction = 'adventure';
         const instrumentMap = {
-            1: { name: 'Angklung', icon: '🎶', options: ['🎶','🥁','🎸','🎻'] },
+            1: { name: 'Angklung', icon: '🎶', image: 'https://raw.githubusercontent.com/lorrainemydth-gif/MEDIA-RO/c98900fd489d86e38153e06b1ea237685d260695/angklung%20(1).png', options: ['🎶','🥁','🎸','🎻'] },
             2: { name: 'Gamelan', icon: '🎼', options: ['🎼','🎸','🎤','🥁'] },
             3: { name: 'Suling', icon: '🎵', options: ['🎵','🎸','🎼','🥁'] },
             4: { name: 'Sitar', icon: '🎸', options: ['🎸','🎵','🥁','🎼'] },
@@ -2076,7 +2085,11 @@ si<!DOCTYPE html>
             obstacle.style.left = `${x}%`;
             const options = [...new Set([adventureState.correctInstrument.icon, ...adventureState.correctInstrument.options])];
             const icon = options[Math.floor(Math.random() * options.length)];
-            obstacle.innerText = icon;
+            if (icon === adventureState.correctInstrument.icon && adventureState.correctInstrument.image) {
+                obstacle.innerHTML = `<img src="${adventureState.correctInstrument.image}" alt="${adventureState.correctInstrument.name}" />`;
+            } else {
+                obstacle.innerText = icon;
+            }
             obstacle.dataset.icon = icon;
             stage.appendChild(obstacle);
             adventureState.obstacles.push({ el: obstacle, x, y: -12, hit: false, done: false, icon });
