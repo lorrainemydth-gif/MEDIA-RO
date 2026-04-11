@@ -1958,7 +1958,7 @@ si<!DOCTYPE html>
             const overlay = document.getElementById('adventure-overlay');
             const instrument = instrumentMap[state.idx] || { name: 'Alat Musik', icon: '🎵' };
             adventureState.correctInstrument = instrument;
-            document.getElementById('adventure-subtitle').innerText = `Mini-game petualangan dimulai di ${cityData[state.idx].name}. Tangkap alat musik yang sesuai: ${instrument.name} ${instrument.icon}`;
+            document.getElementById('adventure-subtitle').innerText = `Mini-game petualangan dimulai di ${cityData[state.idx].name}. Tangkap alat musik yang sesuai: ${instrument.name}`;
             document.getElementById('adventure-status').innerText = `Tekan MULAI untuk menangkap ${instrument.name}. Gunakan panah kiri dan kanan.`;
             document.getElementById('adventure-start-btn').classList.remove('hidden');
             document.getElementById('adventure-continue-btn').classList.add('hidden');
